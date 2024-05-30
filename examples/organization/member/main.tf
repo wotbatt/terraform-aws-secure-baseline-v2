@@ -46,6 +46,7 @@ module "secure_baseline" {
     aws.ap-south-1     = aws.ap-south-1
     aws.ap-southeast-1 = aws.ap-southeast-1
     aws.ap-southeast-2 = aws.ap-southeast-2
+    aws.ap-southeast-3 = aws.ap-southeast-3
     aws.ca-central-1   = aws.ca-central-1
     aws.eu-central-1   = aws.eu-central-1
     aws.eu-north-1     = aws.eu-north-1

@@ -56,6 +56,15 @@ module "ebs_baseline_ap-southeast-2" {
   }
 }
 
+module "ebs_baseline_ap-southeast-3" {
+  count  = contains(var.target_regions, "ap-southeast-3") ? 1 : 0
+  source = "./modules/ebs-baseline"
+
+  providers = {
+    aws = aws.ap-southeast-3
+  }
+}
+
 module "ebs_baseline_ca-central-1" {
   count  = contains(var.target_regions, "ca-central-1") ? 1 : 0
   source = "./modules/ebs-baseline"
