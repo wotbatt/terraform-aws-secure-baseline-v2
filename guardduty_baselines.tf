@@ -213,6 +213,23 @@ module "guardduty_baseline_eu-west-3" {
   tags = var.tags
 }
 
+module "guardduty_baseline_me-south-1" {
+  count  = contains(var.target_regions, "me-south-1") && var.guardduty_enabled ? 1 : 0
+  source = "./modules/guardduty-baseline"
+
+  providers = {
+    aws = aws.me-south-1
+  }
+
+  disable_email_notification   = var.guardduty_disable_email_notification
+  finding_publishing_frequency = var.guardduty_finding_publishing_frequency
+  invitation_message           = var.guardduty_invitation_message
+  master_account_id            = local.guardduty_master_account_id
+  member_accounts              = local.guardduty_member_accounts
+
+  tags = var.tags
+}
+
 module "guardduty_baseline_sa-east-1" {
   count  = contains(var.target_regions, "sa-east-1") && var.guardduty_enabled ? 1 : 0
   source = "./modules/guardduty-baseline"
