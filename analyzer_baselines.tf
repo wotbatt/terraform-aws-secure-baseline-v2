@@ -188,6 +188,20 @@ module "analyzer_baseline_eu-west-3" {
   tags = var.tags
 }
 
+module "analyzer_baseline_me-south-1" {
+  count  = local.is_analyzer_enabled && contains(var.target_regions, "me-south-1") ? 1 : 0
+  source = "./modules/analyzer-baseline"
+
+  providers = {
+    aws = aws.me-south-1
+  }
+
+  analyzer_name   = var.analyzer_name
+  is_organization = local.is_master_account
+
+  tags = var.tags
+}
+
 module "analyzer_baseline_sa-east-1" {
   count  = local.is_analyzer_enabled && contains(var.target_regions, "sa-east-1") ? 1 : 0
   source = "./modules/analyzer-baseline"
