@@ -34,6 +34,11 @@ provider "aws" {
 }
 
 provider "aws" {
+  region = "ap-southeast-3"
+  alias  = "ap-southeast-3"
+}
+
+provider "aws" {
   region = "ca-central-1"
   alias  = "ca-central-1"
 }
