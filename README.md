@@ -1,12 +1,12 @@
-# terraform-aws-secure-baseline
+# Terraform AWS Secure Baseline V2
 
-[![Github Actions](https://github.com/Unumed/terraform-aws-secure-baseline/actions/workflows/main.yml/badge.svg)](https://github.com/Unumed/terraform-aws-secure-baseline/actions/workflows/main.yml)
-[![Releases](https://img.shields.io/github/v/release/Unumed/terraform-aws-secure-baseline)](https://github.com/Unumed/terraform-aws-secure-baseline/releases/latest)
+[![Github Actions](https://github.com/Unumed/terraform-aws-secure-baseline-v2/actions/workflows/main.yml/badge.svg)](https://github.com/Unumed/terraform-aws-secure-baseline-v2/actions/workflows/main.yml)
+[![Releases](https://img.shields.io/github/v/release/Unumed/terraform-aws-secure-baseline-v2)](https://github.com/Unumed/terraform-aws-secure-baseline-v2/releases/latest)
 
-[Terraform Module Registry](https://registry.terraform.io/modules/Unumed/secure-baseline/aws)
+[Terraform Module Registry](https://registry.terraform.io/modules/Unumed/secure-baseline-v2/aws)
 
 A terraform module to set up your AWS account with the reasonably secure configuration baseline.
-Most configurations are based on [CIS Amazon Web Services Foundations v1.4.0] and [AWS Foundational Security Best Practices v1.0.0].
+Most configurations are based on [CIS Amazon Web Services Foundations v1.4.0], [CIS Amazon Web Services Foundations v3.0.0](https://docs.aws.amazon.com/securityhub/latest/userguide/cis-aws-foundations-benchmark.html) and [AWS Foundational Security Best Practices v1.0.0].
 
 See [Benchmark Compliance](./compliance.md) to check which items in various benchmarks are covered.
 
@@ -48,7 +48,7 @@ data "aws_caller_identity" "current" {}
 data "aws_region" "current" {}
 
 module "secure_baseline" {
-  source = "Unumed/secure-baseline/aws"
+  source  = "Unumed/secure-baseline-v2/aws"
 
   audit_log_bucket_name           = "YOUR_BUCKET_NAME"
   aws_account_id                  = data.aws_caller_identity.current.account_id
