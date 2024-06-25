@@ -4,6 +4,17 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [3.0.0](https://github.com/Unumed/terraform-aws-secure-baseline-v2/compare/v2.2.2...v3.0.0) (2024-06-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* New module name to avoid conflicts with the unmantained original version
+
+### Features
+
+* New module name to avoid conflicts with the unmantained original version ([d1e3b43](https://github.com/Unumed/terraform-aws-secure-baseline-v2/commit/d1e3b43bbeab6a673de2c9c7d0ed066c66680d25))
+
 ## [2.2.2](https://github.com/Unumed/terraform-aws-secure-baseline/compare/v2.2.1...v2.2.2) (2024-06-24)
 
 
