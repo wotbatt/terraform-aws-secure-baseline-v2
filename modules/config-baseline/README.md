@@ -8,13 +8,13 @@ Enable AWS Config in all regions to automatically take configuration snapshots.
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.1.4 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 4.3 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 5.38.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 4.3 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 5.38.0 |
 
 ## Inputs
 
@@ -24,8 +24,13 @@ Enable AWS Config in all regions to automatically take configuration snapshots.
 | <a name="input_s3_bucket_name"></a> [s3\_bucket\_name](#input\_s3\_bucket\_name) | The name of the S3 bucket which will store configuration snapshots. | `string` | yes |
 | <a name="input_delivery_channel_name"></a> [delivery\_channel\_name](#input\_delivery\_channel\_name) | The name of the delivery channel. | `string` | no |
 | <a name="input_delivery_frequency"></a> [delivery\_frequency](#input\_delivery\_frequency) | The frequency which AWS Config sends a snapshot into the S3 bucket. | `string` | no |
+| <a name="input_enable_override"></a> [enable\_override](#input\_enable\_override) | Boolean to indicate whether to create override settings for specific resource types. | `bool` | no |
 | <a name="input_include_global_resource_types"></a> [include\_global\_resource\_types](#input\_include\_global\_resource\_types) | Specifies whether AWS Config includes all supported types of global resources with the resources that it records. | `bool` | no |
+| <a name="input_override_description"></a> [override\_description](#input\_override\_description) | Description for the override setting. | `string` | no |
+| <a name="input_override_recording_frequency"></a> [override\_recording\_frequency](#input\_override\_recording\_frequency) | Frequency setting for the values described. | `string` | no |
+| <a name="input_override_resource_types"></a> [override\_resource\_types](#input\_override\_resource\_types) | List of resource types for the override value. | `list(string)` | no |
 | <a name="input_recorder_name"></a> [recorder\_name](#input\_recorder\_name) | The name of the configuration recorder. | `string` | no |
+| <a name="input_recording_frequency"></a> [recording\_frequency](#input\_recording\_frequency) | Specifies the frequency for recording config changes. | `string` | no |
 | <a name="input_s3_key_prefix"></a> [s3\_key\_prefix](#input\_s3\_key\_prefix) | The prefix for the specified S3 bucket. | `string` | no |
 | <a name="input_sns_topic_kms_master_key_id"></a> [sns\_topic\_kms\_master\_key\_id](#input\_sns\_topic\_kms\_master\_key\_id) | To enable SNS Topic encryption enter value with the ID of a custom master KMS key that is used for encryption | `string` | no |
 | <a name="input_sns_topic_name"></a> [sns\_topic\_name](#input\_sns\_topic\_name) | The name of the SNS Topic to be used to notify configuration changes. | `string` | no |
